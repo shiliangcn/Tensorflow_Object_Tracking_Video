@@ -136,6 +136,8 @@ class YOLO_TF:
 	def detect_from_file(self,filename):
 		if self.disp_console : print 'Detect from ' + filename
 		img = cv2.imread(filename)
+		if img is None:
+			print('file name is ' + filename)
 		#img = misc.imread(filename)
 		self.detect_from_cvmat(img)
 
