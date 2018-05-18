@@ -128,8 +128,8 @@ class YOLO_TF:
 			net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
 			self.result = self.interpret_output(net_output[0])
 			self.show_results(img,self.result)
-			strtime = str(time.time()-s)
-			if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
+		strtime = str(time.time()-s)
+		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
 
 	def detect_from_file(self,filename):
 		if self.disp_console : print 'Detect from ' + filename
