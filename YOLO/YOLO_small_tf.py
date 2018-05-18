@@ -130,6 +130,8 @@ class YOLO_TF:
 			self.show_results(img,self.result)
 			strtime = str(time.time()-s)
 			if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
+		except AttributeError:
+			print(img)
 
 	def detect_from_file(self,filename):
 		if self.disp_console : print 'Detect from ' + filename
