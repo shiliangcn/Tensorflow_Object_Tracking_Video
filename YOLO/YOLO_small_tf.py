@@ -117,21 +117,19 @@ class YOLO_TF:
 
 	def detect_from_cvmat(self,img):
 		s = time.time()
-		try:
+		if img != None:
 			self.h_img,self.w_img,_ = img.shape
-		except AttributeError:
-			print(img)
-		img_resized = cv2.resize(img, (448, 448))
-		img_RGB = cv2.cvtColor(img_resized,cv2.COLOR_BGR2RGB)
-		img_resized_np = np.asarray( img_RGB )
-		inputs = np.zeros((1,448,448,3),dtype='float32')
-		inputs[0] = (img_resized_np/255.0)*2.0-1.0
-		in_dict = {self.x: inputs}
-		net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
-		self.result = self.interpret_output(net_output[0])
-		self.show_results(img,self.result)
-		strtime = str(time.time()-s)
-		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
+			img_resized = cv2.resize(img, (448, 448))
+			img_RGB = cv2.cvtColor(img_resized,cv2.COLOR_BGR2RGB)
+			img_resized_np = np.asarray( img_RGB )
+			inputs = np.zeros((1,448,448,3),dtype='float32')
+			inputs[0] = (img_resized_np/255.0)*2.0-1.0
+			in_dict = {self.x: inputs}
+			net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
+			self.result = self.interpret_output(net_output[0])
+			self.show_results(img,self.result)
+			strtime = str(time.time()-s)
+			if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
 
 	def detect_from_file(self,filename):
 		if self.disp_console : print 'Detect from ' + filename
