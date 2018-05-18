@@ -39,6 +39,7 @@ def still_image_YOLO_DET(frames_list, frames_name, folder_path_det_frames,folder
     det_frames_list=[]
     det_result_list=[]
     print("%d Frames to DET"%len(frames_list))
+    
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
     for i in progress(range(0,len(frames_list))):
         # det_frame_name = frames_name[i]
@@ -108,7 +109,7 @@ def main():
     frame_list, frames = Utils_Video.extract_frames(args.path_video, args.perc)
     det_frame_list,det_result_list=still_image_YOLO_DET(frame_list, frames, args.det_frames_folder,args.det_result_folder)
     Utils_Video.make_video_from_list(args.output_name, det_frame_list)
-    print_YOLO_DET_result(det_result_list,args.result_folder, args.summary_file)
+    # print_YOLO_DET_result(det_result_list,args.result_folder, args.summary_file)
 
     end = time.time()
 

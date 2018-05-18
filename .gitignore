@@ -1,0 +1,6 @@
+video_result_OTV/
+video_result_YOLO/
+YOLO/weights/
+YOLO_DET_Alg/
+test_videos/
+.DS_Store

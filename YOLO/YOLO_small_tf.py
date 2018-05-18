@@ -221,9 +221,9 @@ class YOLO_TF:
 		if self.filewrite_img : 
 			if self.disp_console : print '    image file writed : ' + self.tofile_img
 			cv2.imwrite(self.tofile_img,img_cp)			
-		if self.imshow :
-			cv2.imshow('YOLO_small detection',img_cp)
-			cv2.waitKey(1)
+		# if self.imshow :
+		# 	cv2.imshow('YOLO_small detection',img_cp)
+		# 	cv2.waitKey(1)
 		if self.filewrite_txt : 
 			if self.disp_console : print '    txt file writed : ' + self.tofile_txt
 			ftxt.close()

@@ -23,8 +23,8 @@ from utils.rect import Rect
 import vid_classes
 import frame
 import multiclass_rectangle
-import utils_image
-import utils_video
+import Utils_Image
+import Utils_Video
 import progressbar
 import os
 import cv2

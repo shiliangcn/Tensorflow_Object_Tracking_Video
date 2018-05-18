@@ -2,7 +2,7 @@ import os
 import cv2
 import progressbar
 import copy
-import utils_image
+import Utils_Image
 import Utils_Imagenet
 import Utils_Tensorbox
 import frame
@@ -59,7 +59,7 @@ def make_tracked_video(out_vid_path, labeled_video_frames):
         print "Reading Filename: %s"%labeled_video_frames[0]
         h, w = img.shape[:2]
         print "Video Size: width: %d height: %d"%(h, w)
-        fourcc = cv2.cv.CV_FOURCC('m', 'p', '4', 'v')
+        fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
         out = cv2.VideoWriter(out_vid_path,fourcc, 20.0, (w, h), True)
         print("Start Making File Video:%s " % out_vid_path)
         print("%d Frames to Compress"%len(labeled_video_frames))
@@ -77,7 +77,7 @@ def make_video_from_list(out_vid_path, frames_list):
         img = cv2.imread(frames_list[0], True)
         print frames_list[0]
         h, w = img.shape[:2]
-        fourcc = cv2.cv.CV_FOURCC('m', 'p', '4', 'v')
+        fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
         out = cv2.VideoWriter(out_vid_path,fourcc, 20.0, (w, h), True)
         print("Start Making File Video:%s " % out_vid_path)
         print("%d Frames to Compress"%len(frames_list))
@@ -93,7 +93,7 @@ def make_video_from_list(out_vid_path, frames_list):
 def make_video_from_frames(out_vid_path, frames):
     if frames[0] is not None:
         h, w = frames[0].shape[:2]
-        fourcc = cv2.FOURCC('m', 'p', '4', 'v')
+        fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
         out = cv2.VideoWriter(out_vid_path,fourcc, 20.0, (w, h), True)
         print("Start Making File Video:%s " % out_vid_path)
         print("%d Frames to Compress"%len(frames))
@@ -130,7 +130,7 @@ def extract_idl_from_frames(vid_path, video_perc, path_video_folder, folder_path
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     
-    total = int((vidcap.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT)/100)*video_perc)
+    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
     
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
@@ -174,7 +174,7 @@ def extract_frames_incten(vid_path, video_perc, path_video_folder, idl_filename)
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     
-    total = int((vidcap.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT)/100)*video_perc)
+    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
     
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
@@ -466,7 +466,7 @@ def extract_frames(vid_path, video_perc):
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     image = vidcap.read()
-    total = int((vidcap.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT)/100)*video_perc)
+    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
     for i in progress(range(0,total)):

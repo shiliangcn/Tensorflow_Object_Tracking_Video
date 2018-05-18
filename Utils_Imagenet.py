@@ -39,7 +39,7 @@ import tensorflow as tf
 import sys
 import vid_classes
 import progressbar
-import utils_image
+import Utils_Image
 import multiclass_rectangle
 from PIL import Image
 
