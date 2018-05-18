@@ -117,7 +117,7 @@ class YOLO_TF:
 
 	def detect_from_cvmat(self,img):
 		s = time.time()
-		if img != None:
+		try:
 			self.h_img,self.w_img,_ = img.shape
 			img_resized = cv2.resize(img, (448, 448))
 			img_RGB = cv2.cvtColor(img_resized,cv2.COLOR_BGR2RGB)
