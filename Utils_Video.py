@@ -129,7 +129,7 @@ def extract_idl_from_frames(vid_path, video_perc, path_video_folder, folder_path
         return
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
-    
+    print('fuck 1')
     total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/4)*video_perc)
     
     print("%d Frames to Read"%total)
@@ -173,7 +173,7 @@ def extract_frames_incten(vid_path, video_perc, path_video_folder, idl_filename)
         return
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
-    
+    print('fuck 2')
     total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/4)*video_perc)
     
     print("%d Frames to Read"%total)
@@ -465,6 +465,7 @@ def extract_frames(vid_path, video_perc):
         return
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
+    print('fuck 3')
     image = vidcap.read()
     total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/4)*video_perc)
     print("%d Frames to Read"%total)
