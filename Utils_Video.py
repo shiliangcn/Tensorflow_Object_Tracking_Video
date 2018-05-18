@@ -130,7 +130,7 @@ def extract_idl_from_frames(vid_path, video_perc, path_video_folder, folder_path
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     
-    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
+    total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/24)*video_perc)
     
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
@@ -174,7 +174,7 @@ def extract_frames_incten(vid_path, video_perc, path_video_folder, idl_filename)
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     
-    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
+    total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/24)*video_perc)
     
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
@@ -466,7 +466,7 @@ def extract_frames(vid_path, video_perc):
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
     image = vidcap.read()
-    total = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)*video_perc)
+    total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/24)*video_perc)
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
     for i in progress(range(0,total)):
