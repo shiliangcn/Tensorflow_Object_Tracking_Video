@@ -1,0 +1,54 @@
+run it
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   TENSORBOX/utils/__init__.pyc
+#	modified:   TENSORBOX/utils/annolist/AnnotationLib.pyc
+#	modified:   TENSORBOX/utils/annolist/PalLib.pyc
+#	modified:   TENSORBOX/utils/annolist/__init__.pyc
+#	modified:   TENSORBOX/utils/annolist/ma_utils.pyc
+#	modified:   TENSORBOX/utils/data_utils.pyc
+#	modified:   TENSORBOX/utils/googlenet_load.pyc
+#	modified:   TENSORBOX/utils/kaffe/__init__.pyc
+#	modified:   TENSORBOX/utils/kaffe/mynet.pyc
+#	modified:   TENSORBOX/utils/kaffe/network.pyc
+#	modified:   TENSORBOX/utils/rect.pyc
+#	modified:   TENSORBOX/utils/rect_multiclass.pyc
+#	modified:   TENSORBOX/utils/train_utils.pyc
+#	new file:   Utils_Image.pyc
+#	new file:   Utils_Imagenet.pyc
+#	new file:   Utils_Tensorbox.pyc
+#	new file:   Utils_Video.pyc
+#	new file:   YOLO/YOLO_small_tf.pyc
+#	new file:   det_frames/frame0_det.jpg
+#	new file:   det_frames/frame10_det.jpg
+#	new file:   det_frames/frame11_det.jpg
+#	new file:   det_frames/frame1_det.jpg
+#	new file:   det_frames/frame2_det.jpg
+#	new file:   det_frames/frame3_det.jpg
+#	new file:   det_frames/frame4_det.jpg
+#	new file:   det_frames/frame5_det.jpg
+#	new file:   det_frames/frame6_det.jpg
+#	new file:   det_frames/frame7_det.jpg
+#	new file:   det_frames/frame8_det.jpg
+#	new file:   det_frames/frame9_det.jpg
+#	new file:   det_results/frame0.txt
+#	new file:   det_results/frame1.txt
+#	new file:   det_results/frame10.txt
+#	new file:   det_results/frame11.txt
+#	new file:   det_results/frame2.txt
+#	new file:   det_results/frame3.txt
+#	new file:   det_results/frame4.txt
+#	new file:   det_results/frame5.txt
+#	new file:   det_results/frame6.txt
+#	new file:   det_results/frame7.txt
+#	new file:   det_results/frame8.txt
+#	new file:   det_results/frame9.txt
+#	new file:   frame.pyc
+#	new file:   multiclass_rectangle.pyc
+#	new file:   vid_classes.pyc
+#

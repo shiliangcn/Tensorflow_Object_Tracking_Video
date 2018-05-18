@@ -117,7 +117,10 @@ class YOLO_TF:
 
 	def detect_from_cvmat(self,img):
 		s = time.time()
-		self.h_img,self.w_img,_ = img.shape
+		try:
+			self.h_img,self.w_img,_ = img.shape
+		except AttributeError:
+			print(img)
 		img_resized = cv2.resize(img, (448, 448))
 		img_RGB = cv2.cvtColor(img_resized,cv2.COLOR_BGR2RGB)
 		img_resized_np = np.asarray( img_RGB )
