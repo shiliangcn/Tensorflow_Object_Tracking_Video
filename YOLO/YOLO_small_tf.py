@@ -117,7 +117,7 @@ class YOLO_TF:
 
 	def detect_from_cvmat(self,img):
 		s = time.time()
-		try:
+		if img is not None:
 			self.h_img,self.w_img,_ = img.shape
 			img_resized = cv2.resize(img, (448, 448))
 			img_RGB = cv2.cvtColor(img_resized,cv2.COLOR_BGR2RGB)
@@ -130,8 +130,6 @@ class YOLO_TF:
 			self.show_results(img,self.result)
 			strtime = str(time.time()-s)
 			if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
-		except AttributeError:
-			print(img)
 
 	def detect_from_file(self,filename):
 		if self.disp_console : print 'Detect from ' + filename
