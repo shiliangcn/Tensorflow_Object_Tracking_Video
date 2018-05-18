@@ -467,7 +467,7 @@ def extract_frames(vid_path, video_perc):
     print("Start Reading File Video:%s " % vid_path)
     print(video_perc)
     image = vidcap.read()
-    total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/4)*video_perc)
+    total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/5)*video_perc)
     print("%d Frames to Read"%total)
     progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
     for i in progress(range(0,total)):
