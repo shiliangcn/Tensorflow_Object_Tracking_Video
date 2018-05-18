@@ -465,7 +465,7 @@ def extract_frames(vid_path, video_perc):
         return
     print("Opened File Video:%s " % vid_path)
     print("Start Reading File Video:%s " % vid_path)
-    print("video prec is " + video_perc)
+    print(video_perc)
     image = vidcap.read()
     total = int((vidcap.get(cv2.CAP_PROP_FRAME_COUNT)/4)*video_perc)
     print("%d Frames to Read"%total)
