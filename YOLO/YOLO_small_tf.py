@@ -128,6 +128,8 @@ class YOLO_TF:
 			net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
 			self.result = self.interpret_output(net_output[0])
 			self.show_results(img,self.result)
+		else:
+			print(s)
 		strtime = str(time.time()-s)
 		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
 
