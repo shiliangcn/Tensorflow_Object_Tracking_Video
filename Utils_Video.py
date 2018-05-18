@@ -65,7 +65,7 @@ def make_tracked_video(out_vid_path, labeled_video_frames):
         print("%d Frames to Compress"%len(labeled_video_frames))
         progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
         for i in progress(range(0,len(labeled_video_frames))):
-            if utils_image.check_image_with_pil(labeled_video_frames[i]):
+            if Utils_Image.check_image_with_pil(labeled_video_frames[i]):
                 out.write(img)
                 img = cv2.imread(labeled_video_frames[i], True)
         out.release()
@@ -83,7 +83,7 @@ def make_video_from_list(out_vid_path, frames_list):
         print("%d Frames to Compress"%len(frames_list))
         progress = progressbar.ProgressBar(widgets=[progressbar.Bar('=', '[', ']'), ' ',progressbar.Percentage(), ' ',progressbar.ETA()])
         for i in progress(range(0,len(frames_list))):
-            if utils_image.check_image_with_pil(frames_list[i]):
+            if Utils_Image.check_image_with_pil(frames_list[i]):
                 out.write(img)
                 img = cv2.imread(frames_list[i], True)
         out.release()
